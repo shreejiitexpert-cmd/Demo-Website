@@ -1,0 +1,677 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Shree Ji IT Expert – IT Sales, Services & Installation | Faridabad</title>
+  <meta name="description" content="Shree Ji IT Expert – Deals in Desktop, Laptop, EPABX, CCTV Camera, Video Door Phone, Landline Phone. Sales, AMC & Installation in Sector-56, Faridabad."/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+  <style>
+    :root {
+      --blue-deep: #0a1f5c;
+      --blue-mid: #1a3a8f;
+      --blue-bright: #1565e8;
+      --red-accent: #e02020;
+      --gold: #f5b800;
+      --white: #ffffff;
+      --off-white: #f4f6fb;
+      --text-dark: #0d1b3e;
+      --text-muted: #5a6a8a;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--white);
+      color: var(--text-dark);
+      overflow-x: hidden;
+    }
+
+    /* ─── HEADER / NAVBAR ─── */
+    header {
+      position: sticky; top: 0; z-index: 100;
+      background: var(--blue-deep);
+      padding: 0 5%;
+      display: flex; align-items: center; justify-content: space-between;
+      height: 64px;
+      box-shadow: 0 2px 20px rgba(0,0,0,0.3);
+    }
+    .logo {
+      display: flex; align-items: center; gap: 12px;
+    }
+    .logo-badge {
+      width: 44px; height: 44px; border-radius: 50%;
+      border: 2px solid var(--gold);
+      display: flex; align-items: center; justify-content: center;
+      font-family: 'Rajdhani', sans-serif;
+      font-weight: 700; font-size: 13px;
+      color: var(--gold); letter-spacing: 0.5px;
+    }
+    .logo-text {
+      font-family: 'Rajdhani', sans-serif;
+      font-weight: 700; font-size: 20px;
+      color: var(--white); letter-spacing: 1px;
+    }
+    .logo-text span { color: var(--gold); }
+
+    nav a {
+      color: rgba(255,255,255,0.82);
+      text-decoration: none;
+      font-size: 14px; font-weight: 500;
+      margin-left: 28px;
+      transition: color .2s;
+      letter-spacing: 0.3px;
+    }
+    nav a:hover { color: var(--gold); }
+    .nav-cta {
+      background: var(--red-accent); color: var(--white) !important;
+      padding: 7px 18px; border-radius: 4px;
+      font-weight: 600 !important;
+    }
+    .nav-cta:hover { background: #c21a1a !important; }
+
+    .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; }
+    .hamburger span { width: 24px; height: 2px; background: white; border-radius: 2px; }
+
+    /* ─── HERO ─── */
+    .hero {
+      background: linear-gradient(135deg, var(--blue-deep) 0%, var(--blue-mid) 55%, #1042a8 100%);
+      position: relative; overflow: hidden;
+      padding: 90px 5% 80px;
+      display: flex; align-items: center; gap: 40px;
+      min-height: 88vh;
+    }
+    .hero::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    }
+    .hero-content { flex: 1; position: relative; z-index: 2; }
+    .hero-tag {
+      display: inline-block;
+      background: rgba(245,184,0,0.15);
+      border: 1px solid rgba(245,184,0,0.4);
+      color: var(--gold);
+      font-size: 12px; font-weight: 600;
+      padding: 5px 14px; border-radius: 20px;
+      letter-spacing: 1.5px; text-transform: uppercase;
+      margin-bottom: 20px;
+      animation: fadeUp .6s ease both;
+    }
+    .hero h1 {
+      font-family: 'Rajdhani', sans-serif;
+      font-size: clamp(36px, 5vw, 64px);
+      font-weight: 700; color: var(--white);
+      line-height: 1.1; margin-bottom: 12px;
+      animation: fadeUp .7s ease .1s both;
+    }
+    .hero h1 span { color: var(--gold); }
+    .hero p {
+      font-size: 16px; color: rgba(255,255,255,0.75);
+      line-height: 1.7; max-width: 520px;
+      margin-bottom: 36px;
+      animation: fadeUp .7s ease .2s both;
+    }
+    .hero-btns { display: flex; gap: 14px; flex-wrap: wrap; animation: fadeUp .7s ease .3s both; }
+    .btn-primary {
+      background: var(--red-accent); color: white;
+      padding: 13px 28px; border-radius: 5px;
+      text-decoration: none; font-weight: 600; font-size: 15px;
+      transition: all .2s;
+      box-shadow: 0 4px 15px rgba(224,32,32,0.35);
+    }
+    .btn-primary:hover { background: #c21a1a; transform: translateY(-2px); }
+    .btn-outline {
+      border: 2px solid rgba(255,255,255,0.4); color: white;
+      padding: 13px 28px; border-radius: 5px;
+      text-decoration: none; font-weight: 500; font-size: 15px;
+      transition: all .2s;
+    }
+    .btn-outline:hover { border-color: var(--gold); color: var(--gold); }
+
+    .hero-cards {
+      flex: 0 0 auto; display: grid; grid-template-columns: 1fr 1fr;
+      gap: 14px; position: relative; z-index: 2;
+      animation: fadeUp .8s ease .2s both;
+    }
+    .hero-card {
+      background: rgba(255,255,255,0.08);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 12px;
+      padding: 18px 16px; width: 140px;
+      text-align: center;
+      transition: transform .2s, background .2s;
+    }
+    .hero-card:hover { transform: translateY(-4px); background: rgba(255,255,255,0.14); }
+    .hero-card .icon { font-size: 30px; margin-bottom: 8px; }
+    .hero-card p { color: rgba(255,255,255,0.85); font-size: 12px; font-weight: 500; }
+
+    /* ─── STRIP ─── */
+    .strip {
+      background: var(--red-accent);
+      padding: 14px 5%;
+      display: flex; align-items: center; gap: 10px; flex-wrap: wrap;
+    }
+    .strip p { color: white; font-size: 14px; font-weight: 500; }
+    .strip strong { font-weight: 700; }
+
+    /* ─── SECTIONS ─── */
+    section { padding: 80px 5%; }
+    .section-tag {
+      font-size: 12px; font-weight: 700; letter-spacing: 2px;
+      text-transform: uppercase; color: var(--blue-bright);
+      margin-bottom: 10px;
+    }
+    .section-title {
+      font-family: 'Rajdhani', sans-serif;
+      font-size: clamp(28px, 4vw, 44px);
+      font-weight: 700; color: var(--text-dark);
+      line-height: 1.15; margin-bottom: 16px;
+    }
+    .section-sub {
+      font-size: 16px; color: var(--text-muted); line-height: 1.7;
+      max-width: 580px; margin-bottom: 48px;
+    }
+
+    /* ─── SERVICES ─── */
+    .services-bg { background: var(--off-white); }
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 22px;
+    }
+    .service-card {
+      background: white;
+      border-radius: 14px;
+      padding: 30px 24px;
+      border: 1px solid #e8edf5;
+      transition: all .25s;
+      position: relative; overflow: hidden;
+    }
+    .service-card::before {
+      content: '';
+      position: absolute; top: 0; left: 0; right: 0; height: 4px;
+      background: linear-gradient(90deg, var(--blue-bright), var(--blue-deep));
+      transform: scaleX(0); transform-origin: left;
+      transition: transform .3s;
+    }
+    .service-card:hover { transform: translateY(-6px); box-shadow: 0 12px 35px rgba(21,101,232,0.12); border-color: #c8d5f0; }
+    .service-card:hover::before { transform: scaleX(1); }
+    .service-icon {
+      width: 52px; height: 52px; border-radius: 12px;
+      background: linear-gradient(135deg, #e8f0fe, #c2d4fc);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 26px; margin-bottom: 16px;
+    }
+    .service-card h3 {
+      font-family: 'Rajdhani', sans-serif;
+      font-size: 19px; font-weight: 700;
+      color: var(--text-dark); margin-bottom: 8px;
+    }
+    .service-card p { font-size: 14px; color: var(--text-muted); line-height: 1.6; }
+    .service-badge {
+      display: inline-block; margin-top: 12px;
+      font-size: 11px; font-weight: 600;
+      padding: 3px 10px; border-radius: 20px;
+      background: #e8f0fe; color: var(--blue-bright);
+    }
+
+    /* ─── WHY US ─── */
+    .whyus-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px; align-items: center;
+    }
+    .whyus-list { display: flex; flex-direction: column; gap: 20px; }
+    .whyus-item { display: flex; gap: 16px; align-items: flex-start; }
+    .whyus-num {
+      font-family: 'Rajdhani', sans-serif;
+      font-size: 36px; font-weight: 700;
+      color: #d9e4f8; line-height: 1;
+      min-width: 48px;
+    }
+    .whyus-text h4 { font-size: 17px; font-weight: 600; margin-bottom: 4px; }
+    .whyus-text p { font-size: 14px; color: var(--text-muted); line-height: 1.6; }
+    .whyus-visual {
+      background: linear-gradient(145deg, var(--blue-deep), var(--blue-mid));
+      border-radius: 20px; padding: 40px;
+      display: grid; grid-template-columns: 1fr 1fr; gap: 16px;
+    }
+    .stat-box {
+      background: rgba(255,255,255,0.1);
+      border-radius: 12px; padding: 24px 20px; text-align: center;
+    }
+    .stat-box .num {
+      font-family: 'Rajdhani', sans-serif;
+      font-size: 38px; font-weight: 700; color: var(--gold);
+    }
+    .stat-box .lbl { font-size: 12px; color: rgba(255,255,255,0.7); margin-top: 4px; }
+
+    /* ─── CONTACT ─── */
+    .contact-bg {
+      background: linear-gradient(135deg, var(--blue-deep) 0%, var(--blue-mid) 100%);
+    }
+    .contact-grid {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: start;
+    }
+    .contact-info h2 { color: white; }
+    .contact-info .section-sub { color: rgba(255,255,255,0.7); }
+    .contact-detail {
+      display: flex; align-items: flex-start; gap: 14px; margin-bottom: 24px;
+    }
+    .contact-icon {
+      width: 44px; height: 44px; border-radius: 10px;
+      background: rgba(255,255,255,0.1);
+      display: flex; align-items: center; justify-content: center; font-size: 20px;
+      flex-shrink: 0;
+    }
+    .contact-label { font-size: 11px; color: rgba(255,255,255,0.5); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 4px; }
+    .contact-value { color: white; font-size: 16px; font-weight: 500; }
+    .contact-value a { color: var(--gold); text-decoration: none; }
+
+    .contact-form {
+      background: white; border-radius: 16px; padding: 36px 32px;
+    }
+    .contact-form h3 {
+      font-family: 'Rajdhani', sans-serif;
+      font-size: 22px; font-weight: 700; margin-bottom: 24px;
+      color: var(--text-dark);
+    }
+    .form-group { margin-bottom: 16px; }
+    .form-group label { display: block; font-size: 13px; font-weight: 500; margin-bottom: 6px; color: var(--text-muted); }
+    .form-group input,
+    .form-group textarea,
+    .form-group select {
+      width: 100%; padding: 11px 14px;
+      border: 1.5px solid #dde4f0;
+      border-radius: 8px; font-size: 14px;
+      font-family: 'DM Sans', sans-serif;
+      transition: border .2s;
+      color: var(--text-dark);
+      background: #fafbfe;
+    }
+    .form-group input:focus,
+    .form-group textarea:focus,
+    .form-group select:focus {
+      outline: none; border-color: var(--blue-bright);
+      background: white;
+    }
+    .form-group textarea { resize: vertical; min-height: 100px; }
+    .form-btn {
+      width: 100%; background: var(--blue-bright); color: white;
+      border: none; padding: 13px; border-radius: 8px;
+      font-size: 15px; font-weight: 600; cursor: pointer;
+      font-family: 'DM Sans', sans-serif;
+      transition: background .2s;
+    }
+    .form-btn:hover { background: var(--blue-deep); }
+    #form-success {
+      display: none;
+      background: #e6f9ef; border: 1px solid #7dd4a0;
+      color: #1a7a45; padding: 12px; border-radius: 8px;
+      font-size: 14px; font-weight: 500; margin-top: 12px; text-align: center;
+    }
+
+    /* ─── FOOTER ─── */
+    footer {
+      background: #06122e;
+      padding: 40px 5% 20px;
+    }
+    .footer-top {
+      display: flex; justify-content: space-between; align-items: flex-start;
+      flex-wrap: wrap; gap: 32px; padding-bottom: 32px;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+    .footer-brand .logo-text { font-size: 22px; }
+    .footer-brand p { color: rgba(255,255,255,0.5); font-size: 13px; margin-top: 8px; max-width: 260px; line-height: 1.6; }
+    .footer-links h4 { color: var(--gold); font-size: 13px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 14px; }
+    .footer-links a { display: block; color: rgba(255,255,255,0.6); font-size: 14px; text-decoration: none; margin-bottom: 8px; transition: color .2s; }
+    .footer-links a:hover { color: white; }
+    .footer-bottom { padding-top: 20px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; }
+    .footer-bottom p { color: rgba(255,255,255,0.4); font-size: 13px; }
+    .footer-bottom a { color: var(--gold); text-decoration: none; }
+
+    /* ─── FLOATING WHATSAPP ─── */
+    .whatsapp-float {
+      position: fixed; bottom: 28px; right: 28px; z-index: 999;
+      background: #25d366; color: white;
+      width: 58px; height: 58px; border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 28px; box-shadow: 0 4px 20px rgba(37,211,102,0.4);
+      text-decoration: none;
+      animation: pulse 2s infinite;
+    }
+    @keyframes pulse {
+      0%, 100% { box-shadow: 0 4px 20px rgba(37,211,102,0.4); }
+      50% { box-shadow: 0 4px 35px rgba(37,211,102,0.7); }
+    }
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(22px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ─── RESPONSIVE ─── */
+    @media (max-width: 900px) {
+      nav { display: none; }
+      nav.open { display: flex; flex-direction: column; position: absolute; top: 64px; left: 0; right: 0; background: var(--blue-deep); padding: 20px 5%; gap: 10px; }
+      nav.open a { margin-left: 0; padding: 8px 0; border-bottom: 1px solid rgba(255,255,255,0.1); }
+      .hamburger { display: flex; }
+      .hero { flex-direction: column; padding-top: 60px; min-height: auto; }
+      .hero-cards { grid-template-columns: repeat(4, 130px); overflow-x: auto; }
+      .whyus-grid, .contact-grid { grid-template-columns: 1fr; }
+      .whyus-visual { display: flex; flex-wrap: wrap; }
+    }
+    @media (max-width: 600px) {
+      .hero-cards { grid-template-columns: 1fr 1fr; }
+      .hero-card { width: auto; }
+      footer .footer-top { flex-direction: column; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+  <div class="logo">
+    <div class="logo-badge">SJIE</div>
+    <div class="logo-text">SHREE JI <span>IT EXPERT</span></div>
+  </div>
+  <nav id="mainNav">
+    <a href="#home">Home</a>
+    <a href="#services">Services</a>
+    <a href="#why-us">About</a>
+    <a href="#contact">Contact</a>
+    <a href="tel:+918860452259" class="nav-cta">📞 Call Now</a>
+  </nav>
+  <div class="hamburger" onclick="toggleNav()">
+    <span></span><span></span><span></span>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-content">
+    <div class="hero-tag">⚡ Trusted IT Solutions — Faridabad</div>
+    <h1>Your Complete<br/><span>IT Partner</span><br/>in Faridabad</h1>
+    <p>Sales, Services, AMC &amp; Installation of Desktops, Laptops, EPABX Systems, Landline Phones, Video Door Phones &amp; CCTV Cameras — all under one roof.</p>
+    <div class="hero-btns">
+      <a href="#contact" class="btn-primary">Get a Free Quote</a>
+      <a href="tel:+918860452259" class="btn-outline">📞 8860452259</a>
+    </div>
+  </div>
+  <div class="hero-cards">
+    <div class="hero-card">
+      <div class="icon">🖥️</div>
+      <p>Desktop &amp; Laptop</p>
+    </div>
+    <div class="hero-card">
+      <div class="icon">📷</div>
+      <p>CCTV Camera</p>
+    </div>
+    <div class="hero-card">
+      <div class="icon">📞</div>
+      <p>EPABX / Landline</p>
+    </div>
+    <div class="hero-card">
+      <div class="icon">🚪</div>
+      <p>Video Door Phone</p>
+    </div>
+  </div>
+</section>
+
+<!-- STRIP -->
+<div class="strip">
+  <p>📍 <strong>Sector-56, Faridabad (Haryana)</strong> &nbsp;|&nbsp; ✉️ <strong>shreejiitexpert@gmail.com</strong> &nbsp;|&nbsp; 📞 <strong>Anuj Panwar: 8860452259</strong></p>
+</div>
+
+<!-- SERVICES -->
+<section class="services-bg" id="services">
+  <div class="section-tag">What We Offer</div>
+  <h2 class="section-title">Our Products &amp; Services</h2>
+  <p class="section-sub">We provide end-to-end IT solutions — from supply and installation to annual maintenance contracts for businesses and homes across Faridabad.</p>
+  <div class="services-grid">
+
+    <div class="service-card">
+      <div class="service-icon">🖥️</div>
+      <h3>Desktop &amp; Laptop</h3>
+      <p>Sales, repair, and AMC for all brands of desktops and laptops. Hardware upgrades, OS installation &amp; troubleshooting.</p>
+      <span class="service-badge">Sales • Service • AMC</span>
+    </div>
+
+    <div class="service-card">
+      <div class="service-icon">📷</div>
+      <h3>CCTV Camera</h3>
+      <p>Complete CCTV surveillance solutions — supply, installation &amp; maintenance of IP, HD &amp; Dome cameras for offices and homes.</p>
+      <span class="service-badge">Install • Maintain</span>
+    </div>
+
+    <div class="service-card">
+      <div class="service-icon">☎️</div>
+      <h3>EPABX System</h3>
+      <p>Professional EPABX/PBX phone systems for offices. Multi-line setup, programming, and ongoing support.</p>
+      <span class="service-badge">Setup • Support</span>
+    </div>
+
+    <div class="service-card">
+      <div class="service-icon">📞</div>
+      <h3>Landline Phone</h3>
+      <p>Sales and servicing of all types of landline phones. Wiring, configuration and fault repairs.</p>
+      <span class="service-badge">Sales • Repair</span>
+    </div>
+
+    <div class="service-card">
+      <div class="service-icon">🚪</div>
+      <h3>Video Door Phone</h3>
+      <p>Modern video door phone systems for secure home and office entry. Installation and service support included.</p>
+      <span class="service-badge">Install • Service</span>
+    </div>
+
+    <div class="service-card">
+      <div class="service-icon">🔧</div>
+      <h3>AMC Contracts</h3>
+      <p>Annual Maintenance Contracts for all IT equipment — cost-effective plans ensuring zero downtime for your business.</p>
+      <span class="service-badge">Annual • Flexible Plans</span>
+    </div>
+
+  </div>
+</section>
+
+<!-- WHY US -->
+<section id="why-us">
+  <div class="whyus-grid">
+    <div>
+      <div class="section-tag">Why Choose Us</div>
+      <h2 class="section-title">Reliable. Experienced. Local.</h2>
+      <p class="section-sub">We are a trusted name in Faridabad for IT hardware and security solutions.</p>
+      <div class="whyus-list">
+        <div class="whyus-item">
+          <div class="whyus-num">01</div>
+          <div class="whyus-text">
+            <h4>Fast On-Site Service</h4>
+            <p>Quick response times for repairs and installations across Faridabad with minimal disruption to your work.</p>
+          </div>
+        </div>
+        <div class="whyus-item">
+          <div class="whyus-num">02</div>
+          <div class="whyus-text">
+            <h4>Certified Technicians</h4>
+            <p>Our team is trained to handle all major brands of IT hardware, EPABX, and surveillance equipment.</p>
+          </div>
+        </div>
+        <div class="whyus-item">
+          <div class="whyus-num">03</div>
+          <div class="whyus-text">
+            <h4>Transparent Pricing</h4>
+            <p>No hidden charges. Get a clear estimate before any work begins — for supply or service jobs.</p>
+          </div>
+        </div>
+        <div class="whyus-item">
+          <div class="whyus-num">04</div>
+          <div class="whyus-text">
+            <h4>AMC for Peace of Mind</h4>
+            <p>Cover all your IT equipment under one affordable annual maintenance plan with priority support.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="whyus-visual">
+      <div class="stat-box">
+        <div class="num">500+</div>
+        <div class="lbl">Happy Clients</div>
+      </div>
+      <div class="stat-box">
+        <div class="num">10+</div>
+        <div class="lbl">Years Experience</div>
+      </div>
+      <div class="stat-box">
+        <div class="num">1000+</div>
+        <div class="lbl">Devices Serviced</div>
+      </div>
+      <div class="stat-box">
+        <div class="num">24/7</div>
+        <div class="lbl">Support Available</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact-bg" id="contact">
+  <div class="contact-grid">
+    <div class="contact-info">
+      <div class="section-tag" style="color: var(--gold);">Get In Touch</div>
+      <h2 class="section-title" style="color:white;">Let's Talk About<br/>Your IT Needs</h2>
+      <p class="section-sub">Fill in the form or reach us directly — we'll get back to you promptly.</p>
+
+      <div class="contact-detail">
+        <div class="contact-icon">📍</div>
+        <div>
+          <div class="contact-label">Address</div>
+          <div class="contact-value">Sector-56, Faridabad, Haryana</div>
+        </div>
+      </div>
+      <div class="contact-detail">
+        <div class="contact-icon">📞</div>
+        <div>
+          <div class="contact-label">Phone / WhatsApp</div>
+          <div class="contact-value"><a href="tel:+918860452259">+91 8860452259</a></div>
+        </div>
+      </div>
+      <div class="contact-detail">
+        <div class="contact-icon">✉️</div>
+        <div>
+          <div class="contact-label">Email</div>
+          <div class="contact-value"><a href="mailto:shreejiitexpert@gmail.com">shreejiitexpert@gmail.com</a></div>
+        </div>
+      </div>
+      <div class="contact-detail">
+        <div class="contact-icon">🕐</div>
+        <div>
+          <div class="contact-label">Working Hours</div>
+          <div class="contact-value">Mon–Sat: 9 AM – 7 PM</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="contact-form">
+      <h3>Send Us a Message</h3>
+      <div class="form-group">
+        <label>Your Name</label>
+        <input type="text" id="fname" placeholder="Anuj Kumar"/>
+      </div>
+      <div class="form-group">
+        <label>Phone Number</label>
+        <input type="tel" id="fphone" placeholder="+91 98765 00000"/>
+      </div>
+      <div class="form-group">
+        <label>Service Required</label>
+        <select id="fservice">
+          <option value="">— Select a service —</option>
+          <option>Desktop / Laptop Sales or Repair</option>
+          <option>CCTV Camera Installation</option>
+          <option>EPABX System Setup</option>
+          <option>Landline Phone</option>
+          <option>Video Door Phone</option>
+          <option>AMC Contract</option>
+          <option>Other</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>Message</label>
+        <textarea id="fmsg" placeholder="Describe your requirement..."></textarea>
+      </div>
+      <button class="form-btn" onclick="submitForm()">Send Enquiry →</button>
+      <div id="form-success">✅ Thank you! We'll contact you shortly on WhatsApp or phone.</div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-top">
+    <div class="footer-brand">
+      <div class="logo">
+        <div class="logo-badge">SJIE</div>
+        <div class="logo-text" style="font-size:18px;">SHREE JI <span>IT EXPERT</span></div>
+      </div>
+      <p style="margin-top:12px;">Your trusted IT partner in Faridabad for sales, service and AMC of all IT and security equipment.</p>
+    </div>
+    <div class="footer-links">
+      <h4>Services</h4>
+      <a href="#services">Desktop &amp; Laptop</a>
+      <a href="#services">CCTV Camera</a>
+      <a href="#services">EPABX System</a>
+      <a href="#services">Landline Phone</a>
+      <a href="#services">Video Door Phone</a>
+      <a href="#services">AMC Contracts</a>
+    </div>
+    <div class="footer-links">
+      <h4>Contact</h4>
+      <a href="tel:+918860452259">📞 8860452259</a>
+      <a href="mailto:shreejiitexpert@gmail.com">✉️ shreejiitexpert@gmail.com</a>
+      <a href="#">📍 Sector-56, Faridabad</a>
+      <a href="https://wa.me/918860452259" target="_blank">💬 WhatsApp Us</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2025 Shree Ji IT Expert. All rights reserved. | <a href="mailto:shreejiitexpert@gmail.com">shreejiitexpert@gmail.com</a></p>
+    <p style="color:rgba(255,255,255,0.3); font-size:12px;">Designed for Anuj Panwar</p>
+  </div>
+</footer>
+
+<!-- FLOATING WHATSAPP -->
+<a class="whatsapp-float" href="https://wa.me/918860452259?text=Hello%2C%20I%20need%20IT%20services%20from%20Shree%20Ji%20IT%20Expert" target="_blank" title="Chat on WhatsApp">
+  💬
+</a>
+
+<script>
+  function toggleNav() {
+    document.getElementById('mainNav').classList.toggle('open');
+  }
+  function submitForm() {
+    const name = document.getElementById('fname').value.trim();
+    const phone = document.getElementById('fphone').value.trim();
+    if (!name || !phone) {
+      alert('Please enter your name and phone number.');
+      return;
+    }
+    document.getElementById('form-success').style.display = 'block';
+    document.getElementById('fname').value = '';
+    document.getElementById('fphone').value = '';
+    document.getElementById('fservice').value = '';
+    document.getElementById('fmsg').value = '';
+    setTimeout(() => { document.getElementById('form-success').style.display = 'none'; }, 5000);
+  }
+  // Smooth scroll
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', e => {
+      const target = document.querySelector(a.getAttribute('href'));
+      if (target) { e.preventDefault(); target.scrollIntoView({ behavior: 'smooth' }); }
+    });
+  });
+</script>
+</body>
+</html>
